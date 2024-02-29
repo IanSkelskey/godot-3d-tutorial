@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brp4u5u6y08cq"]
+
+[ext_resource type="PackedScene" uid="uid://cvxc6ebgb281i" path="res://art/player.glb" id="1_03fps"]
+[ext_resource type="Script" path="res://player.gd" id="1_qhkol"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6i3ei"]
+radius = 1.0277
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qhkol")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_03fps")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6i3ei")
